@@ -1,0 +1,19 @@
+<p>Pending</p>
+
+<ng-container *ngFor="let todo of todoListStore.todos$ | async">
+  <todo-list-item
+    [todo]="todo"
+    *ngIf="todo.state === 'Pending'"
+  ></todo-list-item>
+</ng-container>
+
+<div class="divider"></div>
+
+<p>Completed</p>
+
+<ng-container *ngFor="let todo of todoListStore.todos$ | async">
+  <todo-list-item
+    [todo]="todo"
+    *ngIf="todo.state === 'Complete'"
+  ></todo-list-item>
+</ng-container>

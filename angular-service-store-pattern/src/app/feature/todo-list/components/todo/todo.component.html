@@ -1,0 +1,23 @@
+<span [title]="todo.label">
+  {{ todo.label }}
+</span>
+<div class="divider"></div>
+
+<fa-icon
+  [icon]="uncheckedIcon"
+  class="icon icon__unchecked"
+  *ngIf="todo.state === 'Pending'"
+  (click)="todoListService.toggleTodoState(todo)"
+></fa-icon>
+<fa-icon
+  [icon]="checkedIcon"
+  class="icon icon__checked"
+  *ngIf="todo.state === 'Complete'"
+  (click)="todoListService.toggleTodoState(todo)"
+></fa-icon>
+
+<fa-icon
+  [icon]="trashIcon"
+  class="icon icon__trash"
+  (click)="todoListService.removeTodo(todo)"
+></fa-icon>
